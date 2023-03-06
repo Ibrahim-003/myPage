@@ -1,0 +1,16 @@
+@use '../abstracts' as abs;
+
+.footer {
+    padding-block: 1rem;
+    padding-inline: 2rem;
+
+    &__credit {
+        margin-top: 2rem;
+        text-align: center;
+        font-family: var(--font-mono);
+        @include abs.media-query(abs.$screen-md) {
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+    }
+}

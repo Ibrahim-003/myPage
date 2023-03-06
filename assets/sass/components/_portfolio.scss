@@ -1,0 +1,144 @@
+@use "../abstracts" as abs;
+
+.portfolio {
+  &__title {
+    font-size: clamp(26px, 5vw, 32px);
+    text-align: center;
+    padding-block: 1rem;
+    margin-bottom: 3.5rem;
+    position: relative;
+    z-index: 9;
+    overflow: hidden;
+
+    &::after {
+      content: "";
+      position: absolute;
+      height: 1px;
+      width: 100%;
+      background-color: abs.$blue;
+      left: 0;
+      bottom: 0;
+      z-index: 919;
+
+      @include abs.media-query(abs.$screen-md) {
+        height: 2px;
+      }
+    }
+  }
+
+  &__article {
+    background-color: abs.$lightest-wood;
+    padding-block: 1.5rem;
+    padding-inline: 1.5rem;
+    border-radius: 0.25rem;
+    box-shadow: 0 0 0.75rem abs.$wood-shadow;
+    max-width: 450px;
+
+    @include abs.media-query(abs.$screen-xl) {
+      border-radius: 0.125rem;
+    }
+
+    &--position-absolute {
+      @include abs.media-query(abs.$screen-xl) {
+        position: absolute;
+        bottom: -20%;
+        right: 0;
+      }
+    }
+
+    &--position-absoluteM {
+      @include abs.media-query(abs.$screen-xl) {
+        position: absolute;
+        bottom: -20%;
+        left: 0;
+      }
+    }
+  }
+
+  &__image {
+    max-width: 750px;
+    border-radius: 0.125rem;
+    box-shadow: 0 0 0.5rem abs.$lightest-slate;
+  }
+
+  & .decorator {
+    color: abs.$blue;
+    font-size: abs.$fz-md;
+    font-family: var(--font-mono);
+    margin-bottom: 0.25rem;
+  }
+
+  &__subtitle {
+    font-size: clamp(24px, 5vw, 28px);
+    color: abs.$white;
+  }
+
+  &__text {
+    margin-top: 1.75rem;
+    line-height: 1.4;
+    color: abs.$lightest-slate;
+    font-size: clamp(abs.$fz-sm, 3vw, abs.$fz-md);
+  }
+
+  &__techList {
+    margin-top: 1rem;
+    @include abs.flex($justify: flex-start, $gap: 0.25rem);
+  }
+
+  &__techIcon {
+    width: 2rem;
+    & path {
+      fill: abs.$blue;
+    }
+  }
+
+  &__pagesrc {
+    @include abs.flex($justify: flex-end, $gap: 0.5rem);
+
+    &--scale-icon {
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        transform: scale(1.3);
+      }
+    }
+  }
+
+  &__iconlink {
+    font-size: 1.9rem;
+    color: abs.$blue;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        color: abs.$lightest-slate;
+    }
+  }
+
+  &__link {
+    transition: all 0.3s ease-out;
+
+    &:hover {
+      background-color: abs.$light-blue;
+    }
+
+    &--horizontal-align {
+      @include abs.flex($display: inline-flex, $gap: 0.5rem);
+    }
+
+    &--space-in {
+      border: 2px solid abs.$blue;
+      border-radius: 0.25rem;
+      padding-block: 0.5rem;
+      padding-inline: 2rem;
+    }
+
+    &--space-out {
+      margin: 0 auto;
+    }
+
+    &--font {
+      color: abs.$blue;
+      font-size: abs.$fz-sm;
+    }
+  }
+}

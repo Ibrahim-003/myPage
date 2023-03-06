@@ -1,0 +1,44 @@
+@use "../abstracts" as abs;
+
+.main {
+  width: min(100%, 1600px);
+  margin: 0 auto;
+
+  // modifiers
+  &--space-in {
+    padding-inline: 1.5rem;
+
+    @include abs.media-query(425px) {
+      padding-inline: 2rem;
+    }
+
+    @include abs.media-query(abs.$screen-sm) {
+      padding-inline: 3.5rem;
+    }
+
+    @include abs.media-query(abs.$screen-md) {
+      padding-inline: 6.5rem;
+    }
+  }
+
+  &--vertical-align {
+    @include abs.flex($direction: column, $gap: 2.5rem);
+  }
+
+  // children
+  &__section {
+    padding-top: calc(var(--header-height) + 1rem);
+
+    &--space-out {
+      margin: 0 auto;
+    }
+
+    &--space-outS4 {
+        margin-bottom: 5rem;
+    }
+
+    &--regular-size {
+      width: min(100%, 1000px);
+    }
+  }
+}

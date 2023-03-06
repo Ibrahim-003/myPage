@@ -1,0 +1,63 @@
+@use "../abstracts" as abs;
+
+.container {
+  width: 100%;
+
+  &--space-out {
+    @include abs.media-query(abs.$screen-xl) {
+      margin-top: 1rem;
+    }
+  }
+
+  &--horizontal-align {
+    @include abs.flex($justify: space-between);
+  }
+
+  &--vertical-alignS3 {
+    @include abs.flex($direction: column, $align: flex-start, $gap: 3.5rem);
+
+    @include abs.media-query(abs.$screen-md) {
+      @include abs.flex($align: flex-start, $gap: 2rem);
+    }
+  }
+
+  &--vertical-alignS4 {
+    @include abs.flex($direction: column, $gap: 3rem);
+
+    @include abs.media-query(abs.$screen-xl) {
+        @include abs.flex($direction: column, $gap: 8rem);
+    }
+
+    @include abs.media-query(abs.$screen-xxl) {
+        @include abs.flex($direction: column, $gap: 12rem);
+    }
+  }
+
+  &--space-outFS {
+    @include abs.flex($gap: 2rem);
+  }
+
+  &--center {
+    @include abs.flex();
+  }
+
+  &--row-portfolioItem {
+    @include abs.flex();
+  }
+
+  &--display-portfolioItem {
+    display: none;
+
+    @include abs.media-query(abs.$screen-xl) {
+      @include abs.flex();
+    }
+  }
+
+  &--position-relative {
+    position: relative;
+  }
+
+  &--position-absolute {
+    position: absolute;
+  }
+}

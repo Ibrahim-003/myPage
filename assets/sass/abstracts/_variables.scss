@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+// color palete
+$very-darkwood: hsl(32, 86%, 6%);
+$dark-wood: hsl(32, 64%, 11%);  
+$lightest-wood: hsl(32, 41%, 23%);
+$lightestSlate: hsl(40, 70%, 88%);
+$wood-shadow: hsla(32, 86%, 6%, 0.7);
+$dark-slate: hsl(32, 21%, 40%);
+$slate: hsl(32, 20%, 61%);
+$light-slate: hsl(32, 31%, 74%);
+$lightest-slate: hsl(33, 70%, 88%);
+$white: hsl(34, 100%, 95%);
+$blue: hsl(214, 100%, 72%);
+$light-blue: hsla(214, 100%, 72%, 0.358);
+
+//gray scale
+$white: hsl(0, 0%, 100%);
+$black: hsl(0, 0%, 0%);
+$darkGray: hsl(0, 0%, 55%);
+$veryDarkGray: hsl(0, 0%, 41%);
+
+// font size
+$fz-xxs: 12px;
+$fz-xs: 13px;
+$fz-sm: 14px;
+$fz-md: 16px;
+$fz-lg: 18px;
+$fz-xl: 20px;
+$fz-xxl: 22px;
+
+// Breakpoints
+$screen-sm: 36em; //576px Large smartphones
+$screen-md: 48em; //768px Small tablets
+$screen-lg: 62em; //992px Tabletsff
+$screen-custom: 64em; //1024px laptops
+$screen-xl: 75em; //1200px Desktops
+$screen-xxl: 87.5em; //1400px Large desktops
+$screen-rwd: 25.3125em; // Custom device
+
+// custom properties
+:root {
+  --header-height: 5rem;
+
+  // fonts
+  --font-sans: "Calibre", "Inter", "San Francisco", "SF Pro Text", -apple-system,
+    system-ui, sans-serif;
+  --font-mono: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+}

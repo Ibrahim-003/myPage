@@ -1,0 +1,25 @@
+// background
+@mixin backgroundImage($url, $repeat: no-repeat, $size: cover, $position: center) {
+    background: {
+        image: url($url);
+        repeat: $repeat;
+        size: $size;
+        position: $position;
+    }
+}
+
+// flex
+@mixin flex($display: flex, $direction: row,  $justify: center, $align: center, $gap: 0) {
+    display: $display;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    gap: $gap;
+}
+
+// media query
+@mixin media-query($breakpoint) {
+    @media screen and (min-width: $breakpoint) {
+        @content;
+    }
+}

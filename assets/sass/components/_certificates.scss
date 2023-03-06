@@ -1,0 +1,17 @@
+@use "../abstracts" as abs;
+
+.certificate {
+    margin-top: 2rem;
+
+  &--vertical-align {
+    @include abs.flex($direction: column, $align: flex-start, $gap: 0.5rem);
+  }
+
+  &__link {
+    color: abs.$blue;
+  }
+
+  &__rowIcon {
+    margin-right: 1rem;
+  }
+}

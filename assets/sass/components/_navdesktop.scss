@@ -1,0 +1,37 @@
+@use "../abstracts" as abs;
+
+.nav-desktop {
+  &--display {
+    display: none;
+
+    @include abs.media-query(abs.$screen-md) {
+      display: initial;
+    }
+  }
+
+  &__list {
+    &--horizontal-align {
+      @include abs.flex($gap: 2.5rem);
+    }
+  }
+
+  &__link {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: abs.$lightestSlate;
+    transition: all 0.3s ease-out;
+
+    // modifiers
+    &--horizontal-align {
+      @include abs.flex($gap: 0.5rem);
+    }
+
+    &:hover {
+      color: abs.$blue;
+    }
+  }
+
+  &__linkIcon {
+    color: abs.$blue;
+  }
+}

@@ -1,0 +1,77 @@
+@use "../abstracts" as abs;
+
+.header {
+  position: fixed;
+  z-index: 299;
+  width: 100%;
+  top: 0;
+  background-color: abs.$dark-wood;
+
+  &--space-in {
+    padding-inline: 1.5rem;
+
+    @include abs.media-query(abs.$screen-md) {
+      padding-inline: 2.5rem;
+    }
+
+    @include abs.media-query(abs.$screen-xl) {
+        padding-inline: 3.125rem;
+    }
+  }
+
+  &--regular-size {
+    height: var(--header-height);
+  }
+
+  &--vertical-align {
+    @include abs.flex();
+  }
+
+  // children
+  &__logo-link,
+  &__toggler {
+    position: relative;
+    z-index: 200;
+  }
+
+  &__toggler {
+    @include abs.media-query(abs.$screen-md) {
+      display: none;
+    }
+  }
+
+  &__logo-link {
+    font-size: 2.5rem;
+    color: abs.$blue;
+    font-weight: 600;
+  }
+
+  &__logo {
+    width: 2rem;
+    height: auto;
+
+    @include abs.media-query(abs.$screen-xl) {
+        width: 3rem;
+        height: auto;
+    }
+  }
+
+  &__togglerIcon {
+    display: none;
+    font-size: 1.6rem;
+    color: abs.$blue;
+    cursor: pointer;
+
+    &--active {
+      display: initial;
+    }
+
+    &:hover {
+      color: var(--first-color);
+    }
+
+    &--fz-md {
+      font-size: 1.7rem;
+    }
+  }
+}

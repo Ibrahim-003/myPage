@@ -1,0 +1,51 @@
+@use "../abstracts" as abs;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  line-height: 1.3;
+  margin: 0 0 var(--header-hight) 0;
+  background-color: abs.$dark-wood;
+  color: abs.$slate;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  font-size: clamp(32px, 8vw, 80px);
+  color: abs.$lightest-slate;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  border: none;
+  background-color: inherit;
+}
+
+p {
+    font-size: clamp(abs.$fz-md, 1.2vw, abs.$fz-xl);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: abs.$dark-slate;
+  border: 3px solid abs.$dark-wood;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar {
+  width: abs.$fz-xs;
+}
+
+::-webkit-scrollbar-track {
+  background: abs.$dark-wood;
+}

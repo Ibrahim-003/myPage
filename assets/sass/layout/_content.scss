@@ -1,0 +1,129 @@
+@use "../abstracts" as abs;
+
+.content {
+  display: none;
+
+  @include abs.media-query(abs.$screen-md) {
+    &--display-left {
+      display: block;
+      position: fixed;
+      z-index: 169;
+      bottom: 0;
+      left: 1.5rem;
+
+      @include abs.media-query(abs.$screen-xl) {
+        left: 3rem;
+      }
+
+      @include abs.media-query(1600px) {
+        left: 4rem;
+      }
+    }
+
+    &--display-right {
+      display: block;
+      position: fixed;
+      z-index: 169;
+      bottom: 0;
+      right: 1.5rem;
+
+      @include abs.media-query(abs.$screen-xl) {
+        right: 3rem;
+      }
+
+      @include abs.media-query(1600px) {
+        right: 4rem;
+      }
+    }
+
+    &--decorator {
+      &::after {
+        content: "";
+        display: block;
+        width: 1px;
+        height: 100px;
+        margin: 3rem auto 0;
+        background-color: abs.$light-slate;
+
+        @include abs.media-query(abs.$screen-custom) {
+          height: 150px;
+        }
+
+        @include abs.media-query(abs.$screen-xxl) {
+            width: 2px;
+        }
+
+        @include abs.media-query(1600px) {
+          height: 400px;
+        }
+      }
+    }
+
+    &--column-align {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .list {
+      &::after {
+        content: "";
+        display: block;
+        width: 1px;
+        height: 100px;
+        margin: 3rem auto 0;
+        background-color: abs.$light-slate;
+
+        @include abs.media-query(abs.$screen-custom) {
+          height: 150px;
+        }
+
+        @include abs.media-query(abs.$screen-xxl) {
+            width: 2px;
+        }
+
+        @include abs.media-query(1600px) {
+          height: 400px;
+        }
+      }
+    }
+
+    .linkIcon {
+      font-size: 1.5rem;
+      color: abs.$light-slate;
+      transition: all 0.3s ease-in;
+
+      @include abs.media-query(abs.$screen-xxl) {
+        font-size: 2rem;
+      }
+
+      @include abs.media-query(1600px) {
+        font-size: 2.5rem;
+      }
+
+      &:hover {
+        color: abs.$blue;
+      }
+    }
+
+    .email {
+      writing-mode: vertical-lr;
+      font-size: abs.$fz-md;
+      color: abs.$light-slate;
+      transition: all 0.3s ease-in;
+      @include abs.flex();
+
+      @include abs.media-query(abs.$screen-xxl) {
+        font-size: abs.$fz-md;
+      }
+
+      @include abs.media-query(1600px) {
+        font-size: abs.$fz-lg;
+      }
+
+      &:hover {
+        color: abs.$blue;
+      }
+    }
+  }
+}
